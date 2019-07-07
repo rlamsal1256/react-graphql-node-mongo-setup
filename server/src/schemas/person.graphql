@@ -1,0 +1,21 @@
+input PersonInput {
+    name: String
+}
+
+input GetPersonInput {
+    _id: String
+}
+
+type Person {
+    _id: ID!
+
+    name: String
+}
+
+type Query {
+    getPerson(input: GetPersonInput!): Person
+}
+
+type Mutation {
+    createPerson(input: PersonInput) : Person
+}
