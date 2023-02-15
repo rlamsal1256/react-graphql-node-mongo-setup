@@ -1,3 +1,3 @@
 # React-graphql-node-mongo-setup
 
-test actions 1 2
+test actions 1 2 3
