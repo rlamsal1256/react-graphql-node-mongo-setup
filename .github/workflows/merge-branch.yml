@@ -1,2 +1,18 @@
-- name: Merge branch
-  uses: devmasx/merge-branch@1.4.0
+name: Sync master with test 
+on:
+  push:
+    branches:
+      - master
+jobs:
+  sync-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Merge master -> test
+        uses: devmasx/merge-branch@master
+        with:
+          type: now
+          from_branch: master
+          target_branch: test
+          github_token: ${{ github.token }}
